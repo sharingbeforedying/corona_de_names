@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr" ng-app="myApp">
+
+<head>
+  <meta Charest="UTF-8">
+  <title>Test AngularJS</title>
+  <script src="lib/angular.min.js"></script>
+  <script src="js/images_grid.js"></script>
+</head>
+
+<body ng-controller="myController">
+  <button ng-click="affichage()">Afficher la liste</button>
+  <h1>Liste des images</h1>
+  <!-- <div ng-repeat="imagePath in myJson.imagePaths">
+    <h3>{{imagePath}}</h3>
+  </div> -->
+  <div ng-repeat="imageSrc in myJson.imageSrcs">
+    <img src="{{imageSrc}}">
+  </div>
+</body>
+
+</html>

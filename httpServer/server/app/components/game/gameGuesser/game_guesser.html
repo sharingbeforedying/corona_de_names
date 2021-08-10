@@ -1,0 +1,88 @@
+<!-- game_guesser.html -->
+<link rel="stylesheet" href="../css/overlay.css">
+
+<div class="custom_cursor h-100" ng-controller="gameGuesserPController" ng-init="init()" ng-style="styleForMain()">
+
+  <h1 ng-style="styleForTopBanner()">{{bannerMessage}}</h1>
+  <!--, clicks left: {{gameModel.currentTurn.actionSequence.get_remaining_actions_nb()}}-->
+  <!-- <h1 class="text-center" ng-controller="cnmGameOverController" ng-init="init()">{{message}}</h1> -->
+
+  <div ng-controller="displaySettingsController" ng-init="init()">
+    <h4>display Settings</h4>
+    <input type="number" name="cellSizeInput" ng-model="size_cell" ng-change="updateWith_cellSize(size_cell)">
+    <input type="number" name="fontSizeInput" ng-model="size_font" ng-change="updateWith_fontSize(size_font)">
+  </div>
+
+  <h4>active player</h4>
+  <div>name:  {{playerPSI().group.name}}</div>
+  <div>role:  {{playerPSI().session.role}}</div>
+  <div>score: {{playerPSI().instance.score}}</div>
+
+  <div class="row w-100 h-100">
+
+    <div class="col-10 h-100">
+
+      <div ng-controller="gameGuesserGridController" ng-init="init()" ng-style="styleForGrid()" style="display: grid; grid-template-columns: repeat(5,1fr); grid-gap: 4px 4px; justify-content: stretch;">
+        <div ng-repeat="cellModel in cellModels" class="d-flex">
+              <div class="flex-fill rounded overlay-container" ng-controller="gameGuesserCellController" ng-init="init(cellModel)" ng-style="styleForCell()" ng-click="cellClicked()">
+
+                <!-- content -->
+                <div class="flex-fill" ng-controller="cellContentController" ng-init="init(cellModel.content.items)" ng-style="styleForContent()">
+                  <div class="card mx-auto" style="background-color: Transparent;border-style:none;" ng-style="styleForCard()">
+                    <!-- image -->
+                    <img class="card-img h-100 w-100" src="{{image}}" style="border-style:none; object-fit: cover;"></img>
+                    <!-- word -->
+                    <div class="card-img-overlay d-flex align-items-center" style="padding:0px;">
+                      <h2 class="card-title mx-auto" ng-style="styleForWord()">{{word}}</h2>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- content-overlay -->
+                <div class="overlay" ng-style="styleForContentOverlay()">
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+    </div>
+
+
+    <div class="col-2">
+
+      <!--contract-->
+      <div class="row" ng-controller="gameGuesserHintController" ng-style="style()">
+
+          <!--number-->
+          <div class="number_picker_number row">
+            <img class="d-flex flex-fill" src="assets/images/number_picker/numbers/{{hint_number}}.png"></img>
+          </div>
+
+          <!--word-->
+          <div class="row">
+            <h4>{{hint_word}}</h4>
+          </div>
+
+          <!--end turn-->
+          <div class="row" ng-switch="canEndTurn()">
+            <div ng-switch-when="true">
+              <button class="end_turn_button d-flex" ng-click="submit_endTurn()" style="background-color: Transparent;border: none;" ng-style="styleForEndTurn()">
+                <img class="d-flex flex-fill" src="assets/images/buttons/stop.png"></img>
+              </button>
+            </div>
+            <div ng-switch-when="false">
+              <!-- nothing -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>

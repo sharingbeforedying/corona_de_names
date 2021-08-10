@@ -1,0 +1,10 @@
+<div>
+  <div>ID:{{$ctrl.player.id}}</div>
+  <div>NAME:{{$ctrl.player.name}}</div>
+
+  <my-select text='"Role:"' starting-option-key='$ctrl.player.role.id' options="$ctrl.player.roles" on-update="$ctrl.handleSelect_role(value)"></my-select>
+
+  <my-checkbox text='"Ready:"' starting-value="$ctrl.player.ready" on-update="$ctrl.handleCheck_ready(value)"></my-checkbox>
+
+  <button ng-click="$ctrl.onLeaveRequest({player: $ctrl.player})">LEAVE TEAM</button>
+</div>

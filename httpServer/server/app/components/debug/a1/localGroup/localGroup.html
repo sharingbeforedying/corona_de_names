@@ -1,0 +1,55 @@
+<div ng-switch="!$ctrl.group">
+
+  <div ng-switch-when="true">
+    <button ng-click="$ctrl.createGroup()">Create Group</button>
+
+    <br>
+    <div class="container">
+      <button ng-click="$ctrl.auto(2)">Auto 2</button>
+      <button ng-click="$ctrl.auto(4)">Auto 4</button>
+
+      <button ng-click="$ctrl.autoTeller(2)">Auto Teller 2</button>
+      <button ng-click="$ctrl.autoGuesser(2)">Auto Guesser 2</button>
+
+      <button ng-click="$ctrl.autoDuo('P1', 'instanceBegin')">Auto DUO P1, INSTANCE BEGIN</button>
+      <button ng-click="$ctrl.autoDuo('P2', 'instanceBegin')">Auto DUO P2, INSTANCE BEGIN</button>
+
+      <button ng-click="$ctrl.autoDuo('P1', 'contentConfig')" style="width:200px;height:200px;">Auto DUO P1, CONTENT CONFIG</button>
+      <button ng-click="$ctrl.autoDuo('P2', 'contentConfig')" style="width:200px;height:200px;">Auto DUO P2, CONTENT CONFIG</button>
+
+    </div>
+
+  </div>
+
+  <div ng-switch-when="false">
+
+    <div class="localGroup">
+        <h4>LOCAL GROUP</h4>
+        <div>
+          NAME:
+          <editable-field field-value="$ctrl.group.name" field-type="text" on-update="$ctrl.update('name', value)"></editable-field>
+        </div>
+        <div>
+          IMAGE:
+          <image-field
+            img-src="$ctrl.group.image"
+            target-size="{width: 32, height: 32}"
+
+            on-update="$ctrl.update('image', imgSrc)"
+          ></image-field>
+        </div>
+
+        <h4>GROUP PLAYERS:</h4>
+        <group-player-list-item ng-repeat="groupPlayer in $ctrl.group.players"
+                                group-player="groupPlayer"
+                                on-remove-request="$ctrl.removePlayer(player)"
+        ></group-player-list-item>
+
+        <!-- <button ng-click="$ctrl.addPlayer()">ADD PLAYER</button> -->
+        <button uib-popover-template="{{$ctrl.actionsPopover.templateUrl}}" popover-title="{{$ctrl.actionsPopover.title}}">ADD PLAYER</button>
+
+    </div>
+
+  </div>
+
+</div>

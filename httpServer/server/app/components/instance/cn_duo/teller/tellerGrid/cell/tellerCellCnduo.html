@@ -1,0 +1,21 @@
+<div class="flex-fill rounded overlay-container" ng-style="$ctrl.styleForCell()" ng-click="$ctrl.cellClicked()">
+
+  <!-- content -->
+  <div class="flex-fill" ng-style="$ctrl.styleForContent()">
+    <div class="card mx-auto" style="background-color: Transparent;border-style:none;" ng-style="$ctrl.styleForCard()">
+      <!-- image -->
+      <img class="card-img h-100 w-100" src="{{$ctrl.image}}" style="border-style:none; object-fit: cover;"></img>
+      <!-- word -->
+      <div class="card-img-overlay d-flex align-items-center" style="padding:0px;">
+        <h2 class="card-title mx-auto" ng-style="$ctrl.styleForWord()">{{$ctrl.word}}</h2>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- content-overlay -->
+  <div class="overlay" ng-style="$ctrl.styleForContentOverlay()">
+
+  </div>
+
+</div>

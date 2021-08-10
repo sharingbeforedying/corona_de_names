@@ -1,0 +1,87 @@
+<!-- <div>OL</div> -->
+
+<!-- debug: focus workaround -->
+<button ng-click="$ctrl.switchRole()" style="width:100px; height:100px;">SWITCH ROLE</button>
+
+<div class="flex-fill rounded overlay-container">
+
+  <!-- content -->
+  <div class="flex-fill" ng-style="$ctrl.styleForContent()">
+
+    <div>
+      <h1>INSTANCE TELLER</h1>
+      <h3>{{$ctrl.roomName}}</h3>
+
+      <game-info-cn
+        rx-game-info="$ctrl.rx_gameInfo"
+      ></game-info-cn>
+
+      <turn-cn
+        turn="$ctrl.turn"
+        refresh-trigger-turn="$ctrl.refreshTriggerTurn"
+      ></turn-cn>
+
+      <teller-hint-cn
+        on-submit-hint="$ctrl.manageSubmitHint(hint)"
+      ></teller-hint-cn>
+
+      <display-settings
+      ></display-settings>
+
+      <teller-grid-cn
+        grid-position="$ctrl.grid_position"
+        grid-game="$ctrl.grid_game"
+        grid-content="$ctrl.grid_content"
+
+        refresh-trigger-cell="$ctrl.refreshTriggerCell"
+      ></teller-grid-cn>
+
+      <!-- debug -->
+      <!-- <h4>DEBUG</h4>
+      <teller-grid-cn
+        grid-position="$ctrl.grid_position__goal"
+        grid-game="$ctrl.grid_game"
+        grid-content="$ctrl.grid_content"
+
+        refresh-trigger-cell="$ctrl.refreshTriggerCell"
+      ></teller-grid-cn> -->
+
+      <!-- <div>
+        <h4>STATE</h4>
+        {{$ctrl.state}}
+      </div> -->
+
+      <!--
+      <div ng-repeat="roomCommandName in $ctrl.roomCommandNames">
+        <button ng-click="$ctrl.do(roomCommandName)">{{roomCommandName}}</button>
+      </div>
+
+      <div>
+        <h4>DEBUG</h4>
+        <button ng-click="$ctrl.debug_submitHint()">SUBMIT HINT</button>
+      </div>
+
+
+      <div>
+        <h4>NAV</h4>
+        <button ng-click="$ctrl.goToGuesserRoom()">GO TO GUESSER ROOM</button>
+      </div>
+      -->
+
+    </div>
+
+  </div>
+
+  <!-- content-overlay -->
+  <div class="overlay d-flex" ng-style="$ctrl.styleForNotificationOverlay">
+
+    <!-- teller hint overlay -->
+    <div class="flex-fill align-items-center" ng-style="$ctrl.styleForNotification('tellerHint')" ng-click="$ctrl.notificationClicked('tellerHint')">
+      <notif-teller-hint
+        rx-turn="$ctrl.rx_turn"
+      ></notif-teller-hint>
+    </div>
+
+  </div>
+
+</div>

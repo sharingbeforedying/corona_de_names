@@ -1,0 +1,13 @@
+<!-- home.html -->
+<div>
+  <div class="jumbotron text-center">
+    <h1>Server Face</h1>
+  </div>
+
+  <div class="container">
+    <div ng-repeat="command in $ctrl.serverCommands()">
+      <button ng-click="$ctrl.do(command)">{{command}}</button>
+    </div>
+  </div>
+
+</div>

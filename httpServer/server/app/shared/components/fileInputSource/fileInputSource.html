@@ -1,0 +1,11 @@
+<div
+  class="dropzone flex-fill"
+
+  file-dropzone
+  on-items-drop="$ctrl.onItemsDrop(dataTransfer)"
+
+  ng-dblclick="$ctrl.onDblClick()"
+>
+  <!-- <input type="file" ng-model="$ctrl.input_file" custom-on-change="$ctrl.processInput"></input> -->
+  <input class="w-100 h-100" type="file" custom-on-change="$ctrl.processInput"></input>
+</div>

@@ -1,0 +1,10 @@
+<div class="container" style="background-color : cyan;">
+  x:{{$ctrl.x}}
+  <p>
+     <button uib-popover="I appeared on mouse enter!" popover-trigger="'mouseenter'" type="button" class="btn btn-default">Mouseenter</button>
+  </p>
+  <button uib-popover="I appeared on mouse enter!">popover</button>
+
+  <button uib-popover-template="{{$ctrl.actionsPopover.templateUrl}}" popover-title="{{$ctrl.actionsPopover.title}}">Actions</button>
+
+</div>

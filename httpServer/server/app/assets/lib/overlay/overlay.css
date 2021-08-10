@@ -1,0 +1,29 @@
+.overlay-container {
+    position: relative;
+
+    /*
+    width:  max-content;
+    height: max-content;
+    */
+
+    /*OR*/
+    /*_with a 'display: flex;' parent_*/
+
+    flex-basis: auto;
+    /*flex: 1 1 auto;*/
+
+    /*align-items: flex-start;*/
+
+    /*background-color: aquamarine;*/
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    /*background-color: rgb(255, 127, 234);*/
+}

@@ -1,0 +1,60 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="overlay-container w-100 h-100">
+
+      <!-- content -->
+      <div ng-style="styleForContent()">
+        <image-field
+          class="flex-fill"
+
+          img-src="$ctrl.image"
+          target-size="$ctrl.targetSize_cell"
+
+
+          on-submit="$ctrl.update('image', imgSrc)"
+          on-cancel="$ctrl.edit_cancel()"
+
+        ></image-field>
+      </div>
+
+      <!-- content-overlay -->
+      <div class="overlay d-flex align-items-center" ng-style="styleForContentOverlay()" style="pointer-events:none;">
+
+        <!-- <div class="mx-auto" style="background-color:rgba(255,255,255,1);color:#000000;">{{$ctrl.word}}</div> -->
+        <editable-field
+          class="mx-auto"
+          style="pointer-events:auto;"
+
+          field-value="$ctrl.word"
+          field-type="text"
+          on-update="$ctrl.update('word', value)"
+
+        ></editable-field>
+
+        <button ng-click="$ctrl.random_word()"  style="pointer-events:auto;    width:50px;height:50px;">random word</button>
+        <button ng-click="$ctrl.random_image()" style="pointer-events:auto;    width:50px;height:50px;">random image</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+    <audio-field
+      class="flex-fill"
+      style="height:200px;"
+
+      audio-src-in="$ctrl.audio"
+
+      on-submit="$ctrl.update('audio', audioSrc)"
+      on-cancel="$ctrl.edit_cancel()"
+
+    ></audio-field>
+    <!-- img-src="$ctrl.image" -->
+    <!-- target-size="$ctrl.targetSize_cell" -->
+  </div>
+
+</div>

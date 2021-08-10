@@ -1,0 +1,13 @@
+<div ng-style="$ctrl.styleForGrid()" style="display: grid; grid-template-columns: repeat(5,1fr); grid-gap: 4px 4px; justify-content: stretch;">
+  <div ng-repeat="cellModel in $ctrl.cellModels" class="d-flex" style="width: {{$ctrl.cell_size.width}}px; height: {{$ctrl.cell_size.height}}px">
+
+        <end-cell-cn class="flex-fill"
+          cell-model="cellModel"
+
+          on-cell-selection="$ctrl.onCellSelection({cellModel: cellModel})"
+
+          refresh-trigger-cell="$ctrl.refreshTriggerCell"
+        ></end-cell-cn>
+
+  </div>
+</div>

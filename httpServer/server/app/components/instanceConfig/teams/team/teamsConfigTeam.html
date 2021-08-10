@@ -1,0 +1,24 @@
+<div style="background-color:{{$ctrl.sessionTeam.color}};">
+  <div>ID:{{$ctrl.team.id}}</div>
+
+  <div>COLOR:{{$ctrl.team.color}}</div>
+    <!-- <editable-field field-value="$ctrl.groupplayer.name" field-type="text" on-update="$ctrl.update('name', value)"></editable-field> -->
+  <div>NAME:{{$ctrl.team.name}}</div>
+    <editable-field field-value="$ctrl.team.name" field-type="text" on-update="$ctrl.mutate('name', value)"></editable-field>
+
+  <div>VALID:{{$ctrl.team.valid}}</div>
+  <div>READY:{{$ctrl.team.ready}}</div>
+
+  <div>
+      <h4>PLAYERS</h4>
+      <teams-config-team-player ng-repeat="player in $ctrl.team.players"
+                                player="player"
+                                command-service="$ctrl.commandService"
+                                on-leave-request="$ctrl.leave(player)"
+      ></teams-config-team-player>
+  </div>
+
+  <div class="joinTeam">
+    <button ng-click="$ctrl.join()">JOIN TEAM</button>
+  </div>
+</div>

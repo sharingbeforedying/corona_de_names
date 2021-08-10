@@ -1,0 +1,79 @@
+<!-- <div>OL</div> -->
+
+<div>
+  <h1>TURN {{$ctrl.turn.index}}</h1>
+
+  <div>type   : {{$ctrl.turn.type}}</div>
+
+  <div>teamId    : {{$ctrl.turn.teamId}}</div>
+  <div>tellerId  : {{$ctrl.turn.tellerId}}</div>
+  <div>guesserId : {{$ctrl.turn.guesserId}}</div>
+
+  <div>activePlayerId : {{$ctrl.turn.activePlayerId}}</div>
+  <div>canEndTurn     : {{$ctrl.turn.canEndTurn}}</div>
+
+  <div>contractCompleted : {{$ctrl.turn.contractCompleted}}</div>
+
+  <h2>ACTIVE PLAYER: {{$ctrl.turn.activePlayerString}}</h2>
+
+  <div ng-switch="$ctrl.turn.tellerStep != null">
+    <div ng-switch-when="false">
+
+      WAITING FOR TELLER HINT
+
+    </div>
+    <div ng-switch-when="true">
+
+      <h4>TELLER STEP</h4>
+      <div class="tellerStep">
+        TELLER: {{$ctrl.turn.tellerStep.playerAction.player.id}}
+        <div class="tellerHint">
+
+          <!--
+          <div>word   : {{$ctrl.tellerHint.word}}</div>
+          <div>number : {{$ctrl.tellerHint.number}}</div>
+          -->
+          <div>word   : {{$ctrl.turn.tellerStep.playerAction.action.word}}</div>
+          <div>number : {{$ctrl.turn.tellerStep.playerAction.action.number}}</div>
+
+        </div>
+        <div class="result">
+
+        </div>
+      </div>
+
+      <div ng-switch="$ctrl.turn.guesserSteps.length != 0">
+        <div ng-switch-when="false">
+
+          WAITING FOR GUESSER ACTION
+
+        </div>
+        <div ng-switch-when="true">
+
+          <h4>GUESSER STEPS</h4>
+          <div ng-repeat="guesserStep in $ctrl.turn.guesserSteps">
+
+            <div class="guesserStep">
+              GUESSER: {{guesserStep.playerAction.player.id}}
+              <div class="guesserAction">
+                <div>cellIndex   : {{guesserStep.playerAction.action.cellIndex}}}</div>
+              </div>
+              <div class="result">
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+</div>

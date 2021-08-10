@@ -1,0 +1,20 @@
+<!-- home.html -->
+<div>
+  <div class="jumbotron text-center">
+    <h1>Universe Page</h1>
+  </div>
+
+  <div class="container">
+    <!-- <button ng-click="$ctrl.connect()">CONNECT</button> -->
+
+    <div ng-repeat="roomCommand in $ctrl.roomCommands">
+      <button ng-click="$ctrl.do(roomCommand)">{{roomCommand}}</button>
+    </div>
+
+    <div ng-repeat="moveToCommandName in $ctrl.moveToCommandNames">
+      <button ng-click="$ctrl.do(moveToCommandName)" style="width:200px;height:200px;">{{moveToCommandName}}</button>
+    </div>
+
+  </div>
+
+</div>

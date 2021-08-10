@@ -1,0 +1,10 @@
+<div ng-style="$ctrl.styleForGrid()" style="display: grid; grid-template-columns: repeat(5,1fr); grid-gap: 4px 4px; justify-content: stretch;">
+  <div ng-repeat="cellModel in $ctrl.cellModels" class="d-flex">
+
+        <guesser-cell-cnduo class="flex-fill"
+          cell-model="cellModel"
+          on-cell-selection="$ctrl.onCellSelection({cellModel: cellModel})"
+        ></guesser-cell-cnduo>
+
+  </div>
+</div>

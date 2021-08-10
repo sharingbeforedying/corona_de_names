@@ -1,0 +1,184 @@
+<!-- cn_customize.html -->
+<!-- <link rel="stylesheet" href="../../css/overlay.css">
+<link rel="stylesheet" href="../../css/dropzone.css"> -->
+
+<h4>CONTENT CONFIG</h4>
+<!-- <h4>{{$ctrl.contentConfig.name}}</h4> -->
+<editable-field
+  field-value="$ctrl.contentConfig.name"
+  field-type="text"
+  on-update="$ctrl.update('name', value)"
+></editable-field>
+
+<div class="container">
+
+    <div class="row h-100 w-100">
+
+      <div class="col">
+        <input type="file" ng-model="input_file" custom-on-change="$ctrl.uploadFile">LOAD CONTENT CONFIG</input>
+      </div>
+
+      <div class="col">
+        <button ng-click="$ctrl.save_to_file()">SAVE CONTENT CONFIG</button>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <input type="file" ng-model="input_file" custom-on-change="$ctrl.uploadFile__csv">LOAD CSV</input>
+      </div>
+    </div>
+
+    <div class="row">
+      <input type="file" ng-model="input_templateFile" custom-on-change="$ctrl.uploadTemplateFile">LOAD TEMPLATE (CONTENT CONFIG)</input>
+    </div>
+
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <button ng-click="$ctrl.all_edit()">ALL: EDIT</button>
+  </div>
+  <div class="row">
+    <button ng-click="$ctrl.all_submit()">ALL: SUBMIT</button>
+    <div>
+      <h4>BG IMAGE SIZE (KB): {{$ctrl.size_kb__bg}}</h4> 
+    </div>
+  </div>
+
+</div>
+
+<!-- refresh-trigger="$ctrl.refreshTrigger" -->
+<display-settings
+></display-settings>
+
+<!-- SHUFFLE -->
+<button ng-click="$ctrl.shuffleGrid()" style="width:200px;height:200px;">SHUFFLE GRID</button>
+
+<!-- RANDOM -->
+<div class="container">
+
+  <div class="row">
+    RANDOM
+  </div>
+  <div class="row">
+    <div class="col">
+      <button ng-click="$ctrl.random_words()" style="width:200px;height:200px;">RANDOM WORDS</button>
+    </div>
+    <div class="col">
+      <button ng-click="$ctrl.random_images()" style="width:200px;height:200px;">RANDOM IMAGES</button>
+    </div>
+  </div>
+
+  <div class="row">
+    EXPORT
+  </div>
+  <div class="row">
+    <div class="col">
+      <button ng-click="$ctrl.export_grid_as_img()" style="width:200px;height:200px;">EXPORT GRID AS IMAGE</button>
+    </div>
+    <div class="col">
+      <button ng-click="$ctrl.export_grid_as_img_seams()" style="width:200px;height:200px;">EXPORT GRID AS IMAGE (MARGINS FOR SEAMS)</button>
+    </div>
+    <div class="col">
+      <button ng-click="$ctrl.export_grid_as_zip()" style="width:200px;height:200px;">EXPORT GRID AS ZIPPED FOLDER</button>
+    </div>
+  </div>
+</div>
+
+<div ng-switch="$ctrl.isAllEdit">
+  <div ng-switch-when="true">
+    <div class="container">
+      <div class="row">
+        <h4>FOLDER INPUT</h4>
+        <image-folder-input
+          class="flex-fill"
+
+          nb-items="$ctrl.nbItems"
+          item-size="$ctrl.targetSize_cell"
+          random-pick="$ctrl.folderImage_randomPick"
+
+          on-submit="$ctrl.input_bulk('background-image', imgSrc)"
+          on-cancel="$ctrl.edit_cancel()"
+
+        ></image-folder-input>
+      </div>
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <div>BACKGROUND IMAGE</div>
+          </div>
+          <div class="row">
+            BACKGROUND IMAGE COLOR
+            <input type="color" name="input__bg_bg_color" ng-model="$ctrl.bg.bgColor" ng-change="$ctrl.updateWith_BgBgColor($ctrl.bg.bgColor)">
+          </div>
+          <div class="row">
+            <image-field
+              style="width:200px; height:200px;"
+
+              img-src=""
+              target-size="$ctrl.bg.targetSize"
+
+
+              on-submit="$ctrl.input_bulk('background-image', imgSrc)"
+              on-cancel="$ctrl.edit_cancel()"
+
+            ></image-field>
+          </div>
+        </div>
+
+
+        <div>CANVAS</div>
+        <div class="container">
+          <!-- style="width:1000px; height:2000px;" -->
+          <!-- <canvas-component></canvas-component> -->
+          <div class="row">
+            <div class="col">
+              <div class="d-flex" style="width:500px;height:500px;">
+                <canvas id="canvas_bg_from" class="canvas flex-fill">
+                  <!-- width="1500" height="1500" -->
+                </canvas>
+              </div>
+            </div>
+            <div class="col">
+              <div class="d-flex" style="width:500px;height:500px;">
+                <canvas id="canvas_bg_to" class="canvas flex-fill">
+                  <!-- width="1500" height="1500" -->
+                </canvas>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<content-grid
+  grid-content="$ctrl.grid_content"
+  refresh-trigger-cell="$ctrl.refreshTriggerCell"
+
+  on-cell-update="$ctrl.contentCellUpdate(cellUpdate)"
+></content-grid>
+<!-- grid-commander="$ctrl.gridCommander" -->
+
+
+<!-- <div ng-switch="$ctrl.acceptable">
+  GO TO NEXT STEP: CONTENT CONFIG
+  <div ng-switch-when="false">
+    TEAMS CONFIG IS NOT ACCEPTABLE
+  </div>
+  <div ng-switch-when="true"> -->
+    <button ng-click="$ctrl.submitContentConfig()" style="width:200px;height:200px;">SUBMIT CONTENT CONFIG</button>
+  <!-- </div> -->
+<!-- </div> -->
+
+
+<template-grid
+  grid-content="$ctrl.grid_content"
+></template-grid>

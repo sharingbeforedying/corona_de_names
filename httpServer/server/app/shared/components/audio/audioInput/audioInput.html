@@ -1,0 +1,72 @@
+<div class="flex-fill d-flex" style="min-width:200px; min-height:200px;">
+
+  <div class="container-fluid flex-column flex-fill d-flex">
+
+    <div class="row-fluid h-50 flex-fill">  <!-- incredibly ugly -->
+
+      <div class="overlay-container w-100 h-100">
+
+        <!-- content -->
+        <div class="w-100 h-100" ng-style="styleForContent()">
+          <div class="w-100 h-100" ng-switch="!$ctrl.audioSrc">
+            <div class="w-100 h-100" ng-switch-when="true">
+              <div>
+                Double click to browse audio
+              </div>
+            </div>
+            <div class="w-100 h-100" ng-switch-when="false">
+              <!-- <img
+                class="w-100 h-100"
+
+                style="object-fit: fill;"
+
+                src="{{$ctrl.imgSrc}}"
+              ></img> -->
+              <audio
+
+                class="w-100 h-100"
+                style="pointer-events:auto;"
+
+                controls>
+                <!-- src="{{$ctrl.audioSrc}}"> -->
+                <source
+                  src="{{$ctrl.audioSrc}}"
+                ></source>
+                <!-- type="audio/ogg; codecs=vorbis" -->
+                    Your browser does not support the
+                    <code>audio</code> element.
+              </audio>
+            </div>
+          </div>
+        </div>
+
+        <!-- content-overlay -->
+        <div class="overlay d-flex" ng-style="styleForContentOverlay()">
+
+          <div class="flex-fill d-flex" style="overflow: hidden;">
+            <file-data-input-source
+              class="flex-fill d-flex"
+
+              on-new-input="$ctrl.manageInput_data(data)"
+            ></file-data-input-source>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <!-- <button ng-click="$ctrl.onSubmit({audioSrc: $ctrl.audioSrc})">SUBMIT</button> -->
+      <button ng-click="$ctrl.submit()">SUBMIT</button>
+
+      <button ng-click="$ctrl.onCancel()">CANCEL</button>
+
+    </div>
+
+  </div>
+
+
+</div>

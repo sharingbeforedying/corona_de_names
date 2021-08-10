@@ -1,0 +1,35 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "npm init template for bootstraping an empty Colyseus project",
+  "main": "server/room-server.js",
+  "scripts": {
+    "start": "node server/room-server.js",
+    "loadtest": "colyseus-loadtest server/loadtest/example.js --room game_room --numClients 2",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/colyseus/create-colyseus/issues"
+  },
+  "homepage": "https://github.com/colyseus/create-colyseus#readme",
+  "devDependencies": {
+    "@colyseus/loadtest": "^0.12.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0"
+  },
+  "dependencies": {
+    "@colyseus/monitor": "^0.11.0",
+    "@colyseus/social": "^0.10.2",
+    "angular-ui": "^1.0.0",
+    "colyseus": "^0.13.0",
+    "cors": "^2.8.5",
+    "deasync": "^0.1.19",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "on-change": "^1.8.1",
+    "rxjs": "^6.5.5",
+    "why-is-node-running": "^2.1.2"
+  }
+}

@@ -1,0 +1,13 @@
+<!-- color_grid.html -->
+<div class="h-100 w-100" ng-controller="cnpMainController" ng-init="init()">
+
+    <div class="container h-100 d-flex flex-column" ng-controller="cnpGridController">
+      <div ng-repeat="rowModel in grid_model track by $index" class="d-flex flex-row flex-fill">
+          <div ng-repeat="colModel in rowModel track by $index" class="d-flex flex-fill">
+            <div class="card d-flex flex-fill m-1" ng-controller="cnpCellController" ng-init="init(colModel)" ng-style="styleForCell()">
+            </div>
+          </div>
+      </div>
+    </div>
+
+</div>

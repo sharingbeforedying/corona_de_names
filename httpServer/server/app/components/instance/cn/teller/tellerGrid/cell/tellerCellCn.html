@@ -1,0 +1,23 @@
+<div class="flex-fill rounded overlay-container" ng-style="$ctrl.styleForCell()" ng-click="$ctrl.cellClicked()">
+
+  <!-- content -->
+  <div class="flex-fill" ng-style="$ctrl.styleForContent()">
+
+    <content-container-cn
+      content="$ctrl.cellModel.content"
+
+    ></content-container-cn>
+    
+  </div>
+
+  <!-- content-overlay -->
+  <div class="overlay" ng-style="$ctrl.styleForContentOverlay()">
+
+    <!-- miss overlay -->
+    <div class="flex-fill align-items-center" ng-style="$ctrl.styleForMissOverlay()">
+      <h2 class="mx-auto" ng-style="$ctrl.styleForMissWord()">{{$ctrl.examiner}} clicked here</h2>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,9 @@
+<div>
+  Name:
+  <editable-field field-value="$ctrl.name" field-type="text" on-update="$ctrl.name = value"></editable-field>
+</div>
+
+<!-- image -->
+
+<button ng-click="$ctrl.close({$value :{name: $ctrl.name}})">OK</button>
+<button ng-click="$ctrl.dismiss({$value: 'cancel'})">CANCEL</button>

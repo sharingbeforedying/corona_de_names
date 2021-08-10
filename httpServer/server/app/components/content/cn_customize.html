@@ -1,0 +1,57 @@
+<!-- cn_customize.html -->
+<link rel="stylesheet" href="../css/overlay.css">
+<link rel="stylesheet" href="../css/dropzone.css">
+
+
+<div class="container" ng-controller="cncuMainController" ng-init="init()">
+
+    <div class="row h-100 w-100">
+
+      <div class="col-1">
+        <input type="file" ng-model="input_file" custom-on-change="uploadFile">LOAD GRID</input>
+      </div>
+
+      <div class="col-10">
+        <div ng-controller="cncuGridController" style="display: grid; grid-template-columns: repeat(5,1fr); grid-gap: 4px 4px; justify-content: stretch;">
+          <div ng-repeat="cellModel in cellModels" class="d-flex">
+              <div class="flex-fill rounded overlay-container" ng-controller="cncuCellController" ng-init="init(cellModel)" ng-style="styleForCell()" ng-click="cellClicked()">
+
+                <!-- content -->
+                <div class="flex-fill" ng-controller="cellContentController" ng-init="init(cellModel.content.items)" ng-style="styleForContent()">
+                  <div class="card mx-auto" style="background-color: Transparent;border-style:none;" ng-style="styleForCard()">
+                    <!-- image -->
+                    <img class="card-img h-100 w-100" src="{{image}}" style="border-style:none; object-fit: cover;"></img>
+                    <!-- word -->
+                    <div class="card-img-overlay d-flex align-items-center" style="padding:0px;">
+                      <h2 class="card-title mx-auto" ng-style="styleForWord()">{{word}}</h2>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- content-overlay -->
+                <div class="overlay" ng-style="styleForContentOverlay()">
+
+                  <div ng-controller="cellContentInputController" ng-init="init(manageCellContentInputForCellModel(cellModel))" class="flex-fill dropzone" file-dropzone on-item-drop="onItemsDrop($items)" ng-dblclick="onDblClick()">
+
+                    <div class="row">
+              				<input scope-element="wordInput" class="mx-auto" type="text" ng-model="input_word" ng-change="inputWordChanged()" ng-keyup="$event.keyCode == 13 && submitInputWord(input_word)" ng-blur="wordInput_onBlur()" hidden="true">
+              			</div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+        </div>
+      </div>
+
+      <div class="col-1">
+        <button ng-click="save_grid_to_file()">SAVE GRID</button>
+      </div>
+
+    </div>
+
+</div>

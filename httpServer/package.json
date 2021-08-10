@@ -1,0 +1,53 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "npm init template for bootstraping an empty Colyseus project",
+  "main": "server/http-server.js",
+  "scripts": {
+    "start": "node server/http-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/colyseus/create-colyseus/issues"
+  },
+  "homepage": "https://github.com/colyseus/create-colyseus#readme",
+  "devDependencies": {
+    "@colyseus/loadtest": "^0.12.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "rxjs": "^6.5.5",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@colyseus/monitor": "^0.11.0",
+    "@colyseus/social": "^0.10.2",
+    "@uirouter/angularjs": "^1.0.25",
+    "angular": "^1.7.9",
+    "angular-animate": "^1.7.9",
+    "angular-route": "^1.7.9",
+    "angular-touch": "^1.7.9",
+    "angular-ui-bootstrap": "^2.5.6",
+    "babel-preset-es2015": "^6.24.1",
+    "bootstrap": "^4.4.1",
+    "colyseus": "^0.12.0",
+    "colyseus.js": "^0.13.0",
+    "cors": "^2.8.5",
+    "css-loader": "^3.4.2",
+    "deasync": "^0.1.19",
+    "eruda": "^2.3.3",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "html-loader": "^1.0.0",
+    "imagemagick": "^0.1.3",
+    "jquery": "^3.5.1",
+    "on-change": "^1.8.1",
+    "popper.js": "^1.16.1",
+    "ui-bootstrap4": "^3.0.6"
+  }
+}

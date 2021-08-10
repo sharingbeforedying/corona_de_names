@@ -1,0 +1,49 @@
+<!-- home.html -->
+<div>
+  <div class="jumbotron text-center">
+    <h1>Home Page</h1>
+  </div>
+
+  <div class="container">
+
+    <!-- prout -->
+    <div class="container">
+      <h4>Game</h4>
+      <div class="row">
+        <a ui-sref="prout"><i class="fa fa-home"></i>prout</a>
+      </div>
+    </div>
+
+    <!-- test -->
+    <div class="container">
+      <button ng-click="$ctrl.connect_to_child()">CONNECT TO CHILD SERVER</button>
+    </div>
+
+
+    <div>LOCAL ID : {{$ctrl.localId}}</div>
+
+    <!-- group -->
+    <local-group></local-group>
+
+    <!-- game -->
+    <div class="container">
+      <h4>Game</h4>
+      <div class="row">
+        <a ui-sref="session.list"><i class="fa fa-home"></i> Join game session</a>
+      </div>
+      <div class="row">
+        <a ui-sref="session.create"><i class="fa fa-home"></i> Create game session</a>
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="container">
+      <h4>Content</h4>
+      <div class="row">
+        <a ui-sref="content.grid.create"><i class="fa fa-home"></i> Create content grid</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>

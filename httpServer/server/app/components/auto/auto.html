@@ -1,0 +1,27 @@
+<!-- auto.html -->
+<!-- <link rel="stylesheet" href="../css/players.css"> -->
+
+<div ng-controller="autoPController" ng-init="init()">
+    <h1>AUTO</h1>
+
+    <h4>tellers</h4>
+
+    <button ng-click='auto1("teller", teamIds()[0])'>TELLER, {{teamIds()[0]}}</button>
+    <button ng-click='auto1("teller", teamIds()[1])'>TELLER, {{teamIds()[1]}}</button>
+    <button ng-click='auto1("teller", teamIds()[0]);auto1("teller", teamIds()[1])'>TELLER 2</button>
+
+    <h4>guessers</h4>
+
+    <button ng-click='auto1("guesser", teamIds()[0])'>GUESSER, {{teamIds()[0]}}</button>
+    <button ng-click='auto1("guesser", teamIds()[1])'>GUESSER, {{teamIds()[1]}}</button>
+    <button ng-click='auto1("guesser", teamIds()[0]);auto1("guesser", teamIds()[1])'>GUESSER 2</button>
+
+    <h4>all</h4>
+    <button ng-click='auto1("guesser", teamIds()[0]);auto1("teller", teamIds()[0]);auto1("guesser", teamIds()[1]);auto1("teller", teamIds()[1])'>ALL</button>
+
+    <h4>team</h4>
+    <button ng-click='auto1("guesser", teamIds()[0]);auto1("teller", teamIds()[0])'>{{teamIds()[0]}}</button>
+    <button ng-click='auto1("guesser", teamIds()[1]);auto1("teller", teamIds()[1])'>{{teamIds()[1]}}</button>
+
+
+</div>

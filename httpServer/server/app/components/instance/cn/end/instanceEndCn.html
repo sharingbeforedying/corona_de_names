@@ -1,0 +1,65 @@
+<!-- <div>OL</div> -->
+
+<div>
+  <h1>INSTANCE END</h1>
+  <!-- <div>ID:{{$ctrl.session.id}}</div>
+  <h1>CONFIG</h1>
+  <div>NAME:{{$ctrl.session.session_config.name}}</div>
+  <div>PASSWORD:{{$ctrl.session.session_config.password}}</div>
+  <div>DESCRIPTION:{{$ctrl.session.session_config.description}}</div>
+  <div>GAME:{{$ctrl.session.session_config.game}}</div>
+
+  <h1>STATE</h1>
+  <div>state:{{$ctrl.session.state.name}}</div>
+
+  <div>
+    <button ng-click="$ctrl.join()">JOIN SESSION</button>
+  </div>
+
+  <h1>PLAYERS</h1>
+  <session-player ng-repeat="sessionPlayer in $ctrl.players" session-player="sessionPlayer"></session-player>
+
+  <div ng-repeat="moveToCommandName in $ctrl.moveToCommandNames">
+    <button ng-click="$ctrl.move(moveToCommandName)">{{moveToCommandName}}</button>
+  </div> -->
+
+  <div>
+    <h4>GAME OVER</h4>
+    <h1>{{$ctrl.gameoverString}}</h1>
+  </div>
+
+  <!-- <div>
+    <h4>STATE</h4>
+    {{$ctrl.state}}
+  </div> -->
+
+  <div ng-switch="$ctrl.roomService.room.state.allPlayersArePresent">
+    {{$ctrl.roomService.room.state.allPlayersArePresent}}
+    <div ng-switch-when="false">
+      <div style="width:50px; height:50px; background-color: red;"></div>
+    </div>
+    <div ng-switch-when="true">
+      <div style="width:50px; height:50px; background-color: green;"></div>
+    </div>
+  </div>
+
+  <div ng-repeat="roomCommandName in $ctrl.roomCommandNames">
+    <button ng-click="$ctrl.do(roomCommandName)" style="width:200px;height:200px;">{{roomCommandName}}</button>
+  </div>
+
+  <div ng-repeat="moveToCommandName in $ctrl.moveToCommandNames">
+    <button ng-click="$ctrl.move(moveToCommandName)">{{moveToCommandName}}</button>
+  </div>
+
+</div>
+
+<display-settings
+></display-settings>
+
+<end-grid-cn
+  grid-position="$ctrl.grid_position"
+  grid-game="$ctrl.grid_game"
+  grid-content="$ctrl.grid_content"
+></end-grid-cn>
+<!-- on-cell-selection="$ctrl.submitSelection(cellModel)" -->
+<!-- refresh-trigger-cell="$ctrl.refreshTriggerCell" -->

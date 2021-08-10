@@ -1,0 +1,69 @@
+<!-- <div>OL</div> -->
+
+<!-- debug: focus workaround -->
+<button ng-click="$ctrl.switchRole()" style="width:100px; height:100px;">SWITCH ROLE</button>
+
+<div>
+  <h1>INSTANCE GUESSER</h1>
+  <h3>{{$ctrl.roomName}}</h3>
+
+  <game-info-cn
+    rx-game-info="$ctrl.rx_gameInfo"
+  ></game-info-cn>
+
+  <turn-cn
+    turn="$ctrl.turn"
+    refresh-trigger-turn="$ctrl.refreshTriggerTurn"
+  ></turn-cn>
+
+  <display-settings
+  ></display-settings>
+
+  <guesser-grid-cn
+    grid-position="$ctrl.grid_position"
+    grid-game="$ctrl.grid_game"
+    grid-content="$ctrl.grid_content"
+
+    on-cell-selection="$ctrl.submitSelection(cellModel)"
+
+    refresh-trigger-cell="$ctrl.refreshTriggerCell"
+  ></guesser-grid-cn>
+
+
+  <h3>END TURN</h3>
+  <div ng-switch="$ctrl.gameInfo.isSuddenDeath">
+    <div ng-switch-when="true">
+      THIS IS SUDDEN DEATH!!
+    </div>
+    <div ng-switch-when="false">
+      <button ng-click="$ctrl.debug_submitEndTurn()">SUBMIT END TURN</button>
+    </div>
+  </div>
+
+  <!-- debug(CN) -->
+  <button ng-click="$ctrl.debug_submitEndTurn()">SUBMIT END TURN</button>
+
+
+  <!-- <div>
+    <h4>STATE</h4>
+    {{$ctrl.state}}
+  </div> -->
+
+  <!-- <div ng-repeat="roomCommandName in $ctrl.roomCommandNames">
+    <button ng-click="$ctrl.do(roomCommandName)">{{roomCommandName}}</button>
+  </div>
+
+  <div>
+    <h4>DEBUG</h4>
+    <button ng-click="$ctrl.debug_submitSelection()">SUBMIT SELECTION</button>
+    <button ng-click="$ctrl.debug_submitEndTurn()">SUBMIT END TURN</button>
+
+  </div>
+
+  <div>
+    <h4>NAV</h4>
+    <button ng-click="$ctrl.goToTellerRoom()">GO TO TELLER ROOM</button>
+
+  </div> -->
+
+</div>

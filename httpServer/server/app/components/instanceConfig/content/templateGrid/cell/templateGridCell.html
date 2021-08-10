@@ -1,0 +1,28 @@
+<div class="overlay-container w-100 h-100">
+
+  <!-- content -->
+  <div ng-style="styleForContent()">
+    <!-- <image-field
+      class="flex-fill"
+
+      img-src="$ctrl.image"
+      target-size="$ctrl.targetSize_cell"
+
+
+      on-submit="$ctrl.update('image', imgSrc)"
+      on-cancel="$ctrl.edit_cancel()"
+
+    ></image-field> -->
+    <!-- <img src="$ctrl.image"></img> -->
+    <img src="{{$ctrl.cellModel.content.items[1].content}}"></img>
+
+  </div>
+
+  <!-- content-overlay -->
+  <div class="overlay d-flex align-items-center" ng-style="styleForContentOverlay()" style="pointer-events:none;">
+
+    <div class="mx-auto" style="background-color:rgba(255,255,255,1);color:#000000;">{{$ctrl.word}}</div>
+
+  </div>
+
+</div>

@@ -1,0 +1,26 @@
+<h4>Import Settings</h4>
+<div>
+  <p>
+    CELL WIDTH
+    <input type="number" name="input__cell_width"  ng-model="$ctrl.cell_size.width"  ng-change="$ctrl.updateWith_cellWidth($ctrl.size_cell.width)">
+  </p>
+
+  <p>
+    CELL HEIGHT
+    <input type="number" name="input__cell_height" ng-model="$ctrl.cell_size.height" ng-change="$ctrl.updateWith_cellHeight($ctrl.size_cell.height)">
+  </p>
+</div>
+<div>
+  <p>
+    TEXT COLOR
+    <input type="color" name="input__word_text_color" ng-model="$ctrl.word_color.textColor" ng-change="$ctrl.updateWith_wordTextColor($ctrl.word_color.textColor)">
+  </p>
+  <p>
+    BACKGROUND COLOR
+    <input type="color" name="input__word_bg_color" ng-model="$ctrl.word_color.bgColor" ng-change="$ctrl.updateWith_wordBgColor($ctrl.word_color.bgColor)">
+  </p>
+  <p>
+    FONT SIZE
+    <input type="number" name="input__word_fontSize" ng-model="$ctrl.word_size.fontSize" ng-change="$ctrl.updateWith_wordFontSize($ctrl.word_size.fontSize)">
+  </p>
+</div>

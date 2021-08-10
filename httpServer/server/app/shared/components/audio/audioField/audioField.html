@@ -1,0 +1,60 @@
+<div class="overlay-container w-100 h-100">
+
+  <!-- content -->
+  <div ng-style="styleForContent()">
+    <!-- <img class="w-100 h-100" src="{{$ctrl.imgSrc}}" style="border-style:none; object-fit: cover;"></img> -->
+    <div class="w-100 h-100 d-flex align-items-center">
+      <div style="height:100px;">
+      </div>
+      <div ng-switch="!$ctrl.audioSrc">
+        <div ng-switch-when="true">
+          <div>
+            $ctrl.audioSrc == null
+          </div>
+        </div>
+        <div ng-switch-when="false">
+          <audio
+            class="mx-auto"
+            style="pointer-events:auto;"
+
+            controls>
+
+
+            <!-- src="{{$ctrl.audioSrc}}"> -->
+            <!-- <source src="monAudio.ogg" type="audio/ogg"> -->
+            <source
+              src="{{$ctrl.audioSrc}}"
+            ></source>
+            <!-- type="audio/ogg; codecs=vorbis" -->
+                Your browser does not support the
+                <code>audio</code> element.
+          </audio>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <!-- content-overlay -->
+  <div class="overlay" ng-style="styleForContentOverlay()" style="pointer-events:none;">
+    <div class="w-100 h-100" ng-switch="$ctrl.editMode">
+      <div class="w-100 h-100 d-flex" ng-switch-when="false">
+        <div ng-dblclick="$ctrl.setEditing(true)">
+          <button ng-click="$ctrl.setEditing(true)">EDIT</button>
+        </div>
+      </div>
+      <div class="w-100 h-100 d-flex" ng-switch-when="true">
+        <audio-input
+          class="flex-fill d-flex"
+          target-size="$ctrl.targetSize"
+
+          on-submit="$ctrl.manageInput(audioSrc)"
+          on-cancel="$ctrl.manageCancel()"
+        ></audio-input>
+      </div>
+    </div>
+  </div>
+
+</div>

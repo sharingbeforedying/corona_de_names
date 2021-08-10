@@ -1,0 +1,11 @@
+<div ng-style="$ctrl.styleForGrid()" style="display: grid; grid-template-columns: repeat(5,1fr); grid-gap: 4px 4px;">
+  <div ng-repeat="cellModel in $ctrl.cellModels" class="d-flex" style="width: {{$ctrl.cell_size.width}}px; height: {{$ctrl.cell_size.height}}px">
+
+    <template-grid-cell
+      class="flex-fill"
+
+      cell-model="cellModel"
+    ></template-grid-cell>
+
+  </div>
+</div>

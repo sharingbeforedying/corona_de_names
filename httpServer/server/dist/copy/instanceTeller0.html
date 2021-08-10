@@ -1,0 +1,38 @@
+<!-- <div>OL</div> -->
+
+<div>
+  <h1>INSTANCE TELLER</h1>
+
+  <teller-hint
+    on-submit-hint="$ctrl.manageSubmitHint(hint)"
+  ></teller-hint>
+
+  <teller-grid
+    grid-position="$ctrl.grid_position"
+    grid-game="$ctrl.grid_game"
+    grid-content="$ctrl.grid_content"
+  ></teller-grid>
+
+
+  <div>
+    <h4>STATE</h4>
+    {{$ctrl.state}}
+  </div>
+
+  <div ng-repeat="roomCommandName in $ctrl.roomCommandNames">
+    <button ng-click="$ctrl.do(roomCommandName)">{{roomCommandName}}</button>
+  </div>
+
+  <div>
+    <h4>DEBUG</h4>
+    <button ng-click="$ctrl.debug_submitHint()">SUBMIT HINT</button>
+  </div>
+
+
+  <div>
+    <h4>NAV</h4>
+    <button ng-click="$ctrl.goToGuesserRoom()">GO TO GUESSER ROOM</button>
+
+  </div>
+
+</div>

@@ -1,0 +1,10 @@
+<div class="form-group">
+  <label for="formControlSelect">{{$ctrl.text}}</label>
+  <select class="form-control"
+          id="formControlSelect"
+          name="singleSelect"
+          ng-model="$ctrl.model"
+          ng-options="option as option.name for option in $ctrl.options"
+          ng-change="$ctrl.onUpdate({value: $ctrl.model})">
+  </select>
+</div>

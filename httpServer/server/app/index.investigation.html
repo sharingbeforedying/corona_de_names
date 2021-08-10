@@ -1,0 +1,110 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<!-- define angular app -->
+<html>
+
+<head>
+
+  <!-- webpacked-libs -->
+  <script type="text/javascript" src="dist/copy/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="dist/jquery.bundle.js"></script> -->
+
+  <link rel="stylesheet" href="dist/copy/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="dist/bootstrap.bundle.css"> -->
+  <!-- <script type="text/javascript" src="dist/bootstrap.bundle.js"></script> -->
+
+  <script type="text/javascript" src="dist/angular.bundle.js"></script>
+  <script type="text/javascript" src="dist/copy/angular-sanitize.min.js"></script>
+
+
+
+  <script type="text/javascript" src="dist/copy/rxjs.umd.min.js"></script>
+
+
+  <!-- eruda FTW -->
+  <script type="text/javascript" src="dist/copy/eruda.js"></script>
+  <script>eruda.init();</script>
+
+
+
+  <!-- LIBS -->
+
+  <!--drag and drop-->
+  <script type="text/javascript" src="lib/fileDropzone/fileDropzone.js"></script>
+  <link rel="stylesheet" href="lib/fileDropzone/dropzone.css">
+
+  <!-- parsing -->
+  <script type="text/javascript" src="lib/parsers/papaparse.min.js"></script>
+
+
+  <!--overlay-->
+  <link rel="stylesheet" href="lib/overlay/overlay.css">
+
+  <!--pixelated-->
+  <link rel="stylesheet" href="lib/img_pixel/img_pixel.css">
+
+  <!-- canvas -->
+  <script type="text/javascript" src="lib/canvas/fabric.min.js"></script>
+
+  <!-- image compression -->
+  <script type="text/javascript" src="lib/image_compression/pica.min.js"></script>
+  <script type="text/javascript" src="lib/image_compression/compressor.min.js"></script>
+  <script type="text/javascript" src="lib/image_compression/my_resize.js"></script>
+
+
+  <!-- zip -->
+  <script type="text/javascript" src="lib/zip/jszip.min.js"></script>
+
+
+  <!--colyseus-->
+  <!-- <script type="module" src="lib/colyseus/colyseus.old.js"></script> -->
+  <script type="module" src="lib/colyseus/colyseus.js"></script>
+
+
+  <!-- directives -->
+  <script type="text/javascript" src="lib/angularDirectives/input_customOnChange.js"></script>
+
+
+  <!-- utils -->
+  <script type="text/javascript" src="js/utils.js"></script>
+
+  <!-- module -->
+  <!-- <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/utils.js"></script> -->
+  <script type="text/javascript" src="dist/copy/on-change.js"></script>
+
+
+
+
+  <!--angular app-->
+    <!-- enums -->
+    <!-- TODO: move each to its corresponding module -->
+  <script type="text/javascript" src="app/shared/enums/enums.js"></script>
+  <script type="text/javascript" src="app/shared/enums/enums_content.js"></script>
+
+
+
+
+    <!-- app -->
+  <script type="text/javascript" src="app/app.module.js"></script>
+  <script type="text/javascript" src="app/app.routes.js"></script>
+
+  <!-- -->
+  <script type="module" src="app/shared/services/servers/angular/a_navigationService.js"></script>
+  <!--
+  <script type="module" src="app/shared/services/servers/angular/a_focusService.js"></script>
+
+
+  <script type="text/javascript" src="app/components/universe/universe.js"></script>
+
+
+  <script type="module" src="app/app.routes.dictator.js"></script>
+  -->
+
+</head>
+
+<body ng-app="awApp">
+    <ui-view></ui-view>
+</body>
+
+</html>

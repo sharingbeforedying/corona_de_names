@@ -1,0 +1,19 @@
+<!-- npMain.html -->
+
+<script>
+  const exampleNumberDidUpdate = (number) => console.log("number", number);
+</script>
+
+<div ng-controller="npMainController" ng-init="init(1,10,3,exampleNumberDidUpdate)">
+
+  <div>
+      <button ng-click="inc()">UP</button>
+  </div>
+  <div>
+      {{numberModel.number}}
+  </div>
+  <div>
+      <button ng-click="dec()">DOWN</button>
+  </div>
+
+</div>

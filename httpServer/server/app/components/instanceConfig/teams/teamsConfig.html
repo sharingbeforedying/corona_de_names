@@ -1,0 +1,23 @@
+<teams-config-team ng-repeat="team in $ctrl.teams"
+                team="team"
+                command-service="$ctrl.commandService"
+                on-join-request="$ctrl.joinTeam(team)"
+                on-leave-request="$ctrl.leaveTeam(team, player)"
+></teams-config-team>
+
+<div>
+  <h4>FREE PLAYERS</h4>
+  <div ng-repeat="freePlayer in $ctrl.freePlayers" ng-click="$ctrl.selectFreePlayer(freePlayer)" ng-style="$ctrl.style_freePlayer(freePlayer)">
+    <teams-config-free-player free-player="freePlayer"></teams-config-free-player>
+  </div>
+</div>
+
+<!-- <div ng-switch="$ctrl.acceptable">
+  GO TO NEXT STEP: CONTENT CONFIG
+  <div ng-switch-when="false">
+    TEAMS CONFIG IS NOT ACCEPTABLE
+  </div>
+  <div ng-switch-when="true"> -->
+    <button ng-click="$ctrl.submitTeamsConfig()">SUBMIT TEAMS CONFIG</button>
+  <!-- </div> -->
+<!-- </div> -->

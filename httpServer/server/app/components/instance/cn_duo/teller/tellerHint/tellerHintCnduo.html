@@ -1,0 +1,22 @@
+<!--hint creator-->
+<div class="row" ng-style="$ctrl.style()">
+
+    <!--number-->
+    <teller-hint-number-cnduo
+      number="$ctrl.number"
+      on-number-update="$ctrl.manageNumberChange(number)"
+    ></teller-hint-number-cnduo>
+
+    <!--word-->
+    <h4>WORD</h4>
+    <input class="mx-auto" type="text" ng-model="$ctrl.word" ng-change="$ctrl.wordDidUpdate(word)">
+    <!-- <editable-field field-value="''" field-type="text" on-update="$ctrl.sendChatMessage(value)"></editable-field> -->
+
+    <!--submit-->
+    <div class="row">
+      <button class="submit_hint_button d-flex" ng-click="$ctrl.submitHint()" style="background-color: Transparent;border: none;">
+        <img class="d-flex flex-fill" src="img/buttons/ok.png"></img>
+      </button>
+    </div>
+
+</div>

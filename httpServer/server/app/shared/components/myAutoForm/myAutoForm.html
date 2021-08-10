@@ -1,0 +1,20 @@
+<div>
+  <div ng-repeat="formField in $ctrl.keys">
+    <div>{{formField}}:</div>
+    <div ng-switch="$ctrl.formModel[formField].type">
+      <div ng-switch-when="string">
+        <editable-field field-value="$ctrl.form[formField]" field-type="text" on-update="$ctrl.update(formField, value)"></editable-field>
+      </div>
+      <div ng-switch-when="number">
+        <editable-field field-value="$ctrl.form[formField]" field-type="number" on-update="$ctrl.update(formField, value)"></editable-field>
+      </div>
+      <div ng-switch-when="boolean">
+        <my-checkbox text="" starting-value="$ctrl.form[formField]" on-update="$ctrl.update(formField, value)"></my-checkbox>
+      </div>
+      <div ng-switch-default>
+        unsupported type: {{$ctrl.formModel[formField].type}}
+      </div>
+    </div>
+  </div>
+  <button ng-click="$ctrl.onSubmit({form: $ctrl.form})">SUBMIT</button>
+</div>

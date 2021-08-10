@@ -1,0 +1,8 @@
+<!-- <div ng-click="$ctrl.showActions()"> -->
+<div>
+  <div>NAME:{{$ctrl.session.name}}</div>
+  <div>PLAYERS:{{$ctrl.session.players}}</div>
+  <div>T1:{{$ctrl.session.t1}}</div>
+  <div>T2:{{$ctrl.session.t2}}</div>
+  <button uib-popover-template="{{$ctrl.actionsPopover.templateUrl}}" popover-title="{{$ctrl.actionsPopover.title}}">Actions</button>
+</div>

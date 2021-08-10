@@ -1,0 +1,10 @@
+<div>
+  Login:
+  <editable-field field-value="$ctrl.login" field-type="text" on-update="$ctrl.login = value"></editable-field>
+</div>
+<div>
+  Password:
+  <editable-field field-value="$ctrl.password" field-type="text" on-update="$ctrl.login = value"></editable-field>
+</div>
+<button ng-click="$ctrl.close({$value :{login: $ctrl.login, password: $ctrl.password}})">OK</button>
+<button ng-click="$ctrl.dismiss({$value: 'cancel'})">CANCEL</button>

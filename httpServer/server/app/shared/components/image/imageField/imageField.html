@@ -1,0 +1,28 @@
+<div class="overlay-container w-100 h-100">
+
+  <!-- content -->
+  <div ng-style="styleForContent()">
+    <img class="w-100 h-100" ng-src="{{$ctrl.imgSrc}}" style="border-style:none; object-fit: cover;"></img>
+  </div>
+
+  <!-- content-overlay -->
+  <div class="overlay" ng-style="styleForContentOverlay()">
+    <div class="w-100 h-100" ng-switch="$ctrl.editMode">
+      <div class="w-100 h-100 d-flex" ng-switch-when="false">
+        <div ng-dblclick="$ctrl.setEditing(true)">
+          <button ng-click="$ctrl.setEditing(true)">EDIT</button>
+        </div>
+      </div>
+      <div class="w-100 h-100 d-flex" ng-switch-when="true">
+        <image-input
+          class="flex-fill d-flex"
+          target-size="$ctrl.targetSize"
+
+          on-submit="$ctrl.manageInput(imgSrc)"
+          on-cancel="$ctrl.manageCancel()"
+        ></image-input>
+      </div>
+    </div>
+  </div>
+
+</div>

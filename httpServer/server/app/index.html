@@ -1,0 +1,255 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<!-- define angular app -->
+<html>
+
+<head>
+
+  <!-- webpacked-libs -->
+  <script type="text/javascript" src="dist/copy/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="dist/jquery.bundle.js"></script> -->
+
+  <link rel="stylesheet" href="dist/copy/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="dist/bootstrap.bundle.css"> -->
+  <!-- <script type="text/javascript" src="dist/bootstrap.bundle.js"></script> -->
+
+  <script type="text/javascript" src="dist/angular.bundle.js"></script>
+  <script type="text/javascript" src="dist/copy/angular-sanitize.min.js"></script>
+
+
+
+  <script type="text/javascript" src="dist/copy/rxjs.umd.min.js"></script>
+
+
+  <!-- eruda FTW -->
+  <!-- <script type="text/javascript" src="dist/copy/eruda.js"></script>
+  <script>eruda.init();</script> -->
+
+
+
+  <!-- LIBS -->
+
+  <!--drag and drop-->
+  <script type="text/javascript" src="lib/fileDropzone/fileDropzone.js"></script>
+  <link rel="stylesheet" href="lib/fileDropzone/dropzone.css">
+
+  <!-- parsing -->
+  <script type="text/javascript" src="lib/parsers/papaparse.min.js"></script>
+
+
+  <!--overlay-->
+  <link rel="stylesheet" href="lib/overlay/overlay.css">
+
+  <!--pixelated-->
+  <link rel="stylesheet" href="lib/img_pixel/img_pixel.css">
+
+  <!-- canvas -->
+  <script type="text/javascript" src="lib/canvas/fabric.min.js"></script>
+
+  <!-- image compression -->
+  <script type="text/javascript" src="lib/image_compression/pica.min.js"></script>
+  <script type="text/javascript" src="lib/image_compression/compressor.min.js"></script>
+  <script type="text/javascript" src="lib/image_compression/my_resize.js"></script>
+
+
+  <!-- zip -->
+  <script type="text/javascript" src="lib/zip/jszip.min.js"></script>
+
+
+  <!--colyseus-->
+  <!-- <script type="module" src="lib/colyseus/colyseus.old.js"></script> -->
+  <script type="module" src="lib/colyseus/colyseus.js"></script>
+
+
+  <!-- directives -->
+  <script type="text/javascript" src="lib/angularDirectives/input_customOnChange.js"></script>
+
+
+  <!-- utils -->
+  <script type="text/javascript" src="js/utils.js"></script>
+
+  <!-- module -->
+  <!-- <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/utils.js"></script> -->
+  <script type="text/javascript" src="dist/copy/on-change.js"></script>
+
+
+
+
+  <!--angular app-->
+    <!-- enums -->
+    <!-- TODO: move each to its corresponding module -->
+  <script type="text/javascript" src="app/shared/enums/enums.js"></script>
+  <script type="text/javascript" src="app/shared/enums/enums_content.js"></script>
+
+
+
+
+    <!-- app -->
+  <script type="text/javascript" src="app/app.module.js"></script>
+  <script type="text/javascript" src="app/app.routes.js"></script>
+
+  <script type="module" src="app/shared/services/servers/angular/a_navigationService.js"></script>
+  <script type="module" src="app/shared/services/servers/angular/a_focusService.js"></script>
+
+
+  <!-- shared -->
+  <script type="text/javascript" src="app/shared/components/editableField/editableField.js"></script>
+  <script type="text/javascript" src="app/shared/components/mySelect/mySelect.js"></script>
+  <script type="text/javascript" src="app/shared/components/myCheckbox/myCheckbox.js"></script>
+  <script type="text/javascript" src="app/shared/components/myAutoForm/myAutoForm.js"></script>
+
+  <script type="text/javascript" src="app/shared/components/image/imageField/imageField.js"></script>
+  <script type="text/javascript" src="app/shared/components/image/imageInput/imageInput.js"></script>
+  <script type="text/javascript" src="app/shared/components/image/imageFolderInput/imageFolderInput.js"></script>
+
+  <script type="text/javascript" src="app/shared/components/audio/audioField/audioField.js"></script>
+  <script type="text/javascript" src="app/shared/components/audio/audioInput/audioInput.js"></script>
+  <script type="text/javascript" src="app/shared/components/audio/audioFolderInput/audioFolderInput.js"></script>
+
+  <script type="text/javascript" src="app/shared/components/fileDataInputSource/fileDataInputSource.js"></script>
+  <script type="text/javascript" src="app/shared/components/fileInputSource/fileInputSource.js"></script>
+
+  <script type="text/javascript" src="app/shared/components/folderDataInputSource/folderDataInputSource.js"></script>
+  <script type="text/javascript" src="app/shared/components/folderInputSource/folderInputSource.js"></script>
+
+
+
+
+  <script type="module" src="app/shared/components/number_picker/number_picker.js"></script>
+
+  <script type="text/javascript" src="app/shared/components/canvasComponent/canvasComponent.js"></script>
+
+
+
+  <script type="text/javascript" src="app/components/prout/prout.js"></script>
+  <!-- <script type="text/javascript" src="app/components/serverFace/serverFace.js"></script> -->
+  <script type="text/javascript" src="app/components/universe/universe.js"></script>
+
+  <script type="text/javascript" src="app/components/welcome/welcome.js"></script>
+  <script type="text/javascript" src="app/components/portal/portal.js"></script>
+  <script type="text/javascript" src="app/components/client/client.js"></script>
+
+  <script type="text/javascript" src="app/components/chat/chat.js"></script>
+
+
+  <script type="text/javascript" src="app/components/debug/a1/a1.js"></script>
+  <script type="text/javascript" src="app/components/debug/a1/localGroup/localGroup.js"></script>
+  <script type="text/javascript" src="app/components/debug/a1/localGroup/loginModal/loginModal.js"></script>
+  <script type="text/javascript" src="app/components/debug/a1/localGroup/noProfileModal/noProfileModal.js"></script>
+
+  <script type="text/javascript" src="app/components/debug/c1/c1.js"></script>
+
+  <script type="text/javascript" src="app/components/halls/sessionHall/sessionHall.js"></script>
+
+
+  <script type="text/javascript" src="app/components/session/main/sessionMain.js"></script>
+
+
+
+  <script type="text/javascript" src="app/components/debug/cr1/cr1.js"></script>
+
+
+
+
+  <script type="text/javascript" src="app/components/home/home.js"></script>
+
+
+
+  <!-- group -->
+  <script type="text/javascript" src="app/components/group/list/groupPlayerList.js"></script>
+  <script type="text/javascript" src="app/components/group/list/item/groupPlayerListItem.js"></script>
+  <!-- <script type="text/javascript" src="app/components/group/detail/groupPlayer.js"></script> -->
+
+  <!-- session -->
+  <script type="text/javascript" src="app/components/session/list/sessionList.js"></script>
+  <script type="text/javascript" src="app/components/session/list/item/sessionListItem.js"></script>
+
+  <script type="text/javascript" src="app/components/session/create/sessionCreate.js"></script>
+
+  <!-- <script type="text/javascript" src="app/components/session/current/sessionCurrent.js"></script> -->
+  <script type="text/javascript" src="app/components/session/detail/sessionDetail.js"></script>
+  <script type="text/javascript" src="app/components/session/detail/player/sessionPlayer.js"></script>
+
+
+  <!-- instanceConfig -->
+  <!-- teams -->
+  <script type="text/javascript" src="app/components/instanceConfig/teams/teamsConfig.js"></script>
+  <script type="text/javascript" src="app/components/instanceConfig/teams/freePlayer/teamsConfigFreePlayer.js"></script>
+  <script type="text/javascript" src="app/components/instanceConfig/teams/team/teamsConfigTeam.js"></script>
+  <script type="text/javascript" src="app/components/instanceConfig/teams/team/player/teamsConfigTeamPlayer.js"></script>
+
+  <!-- content -->
+  <script type="text/javascript" src="app/components/instanceConfig/content/contentConfig.js"></script>
+  <!-- grid -->
+  <script type="text/javascript" src="app/components/instanceConfig/content/contentGrid/contentGrid.js"></script>
+  <script type="text/javascript" src="app/components/instanceConfig/content/contentGrid/cell/contentConfigCell.js"></script>
+  <!-- template grid -->
+  <script type="text/javascript" src="app/components/instanceConfig/content/templateGrid/templateGrid.js"></script>
+  <script type="text/javascript" src="app/components/instanceConfig/content/templateGrid/cell/templateGridCell.js"></script>
+
+
+  <!-- instance -->
+  <script type="text/javascript" src="app/components/instance/cn/begin/instanceBeginCn.js"></script>
+
+  <script type="text/javascript" src="app/components/instance/cn/turn/instanceTurnCn.js"></script>
+  <script type="text/javascript" src="app/components/instance/cn/gameInfo/gameInfoCn.js"></script>
+  <script type="text/javascript" src="app/components/instance/cn/contentContainer/contentContainerCn.js"></script>
+
+
+  <!-- notifications -->
+  <script type="text/javascript" src="app/components/instance/cn/notifications/tellerHint/notifTellerHint.js"></script>
+
+
+
+  <script type="text/javascript" src="app/components/instance/cn/teller/instanceTellerCn.js"></script>
+  <!-- hint -->
+  <script type="text/javascript" src="app/components/instance/cn/teller/tellerHint/tellerHintCn.js"></script>
+  <script type="text/javascript" src="app/components/instance/cn/teller/tellerHint/number/tellerHintNumberCn.js"></script>
+  <!-- grid -->
+  <script type="text/javascript" src="app/components/instance/cn/teller/tellerGrid/tellerGridCn.js"></script>
+  <script type="text/javascript" src="app/components/instance/cn/teller/tellerGrid/cell/tellerCellCn.js"></script>
+
+  <script type="text/javascript" src="app/components/instance/cn/guesser/instanceGuesserCn.js"></script>
+  <!-- grid -->
+  <script type="text/javascript" src="app/components/instance/cn/guesser/guesserGrid/guesserGridCn.js"></script>
+  <script type="text/javascript" src="app/components/instance/cn/guesser/guesserGrid/cell/guesserCellCn.js"></script>
+
+
+  <script type="text/javascript" src="app/components/instance/cn/end/instanceEndCn.js"></script>
+  <script type="text/javascript" src="app/components/instance/cn/end/endGrid/endGridCn.js"></script>
+  <script type="text/javascript" src="app/components/instance/cn/end/endGrid/cell/endCellCn.js"></script>
+
+
+
+  <!-- services -->
+  <!-- <script type="text/javascript" src="app/shared/services/rooms/roomConnectionService.js"></script> -->
+
+  <script type="text/javascript" src="app/components/game/gameService.js"></script>
+
+
+  <!-- <script type="text/javascript" src="app/shared/services/rooms/gameRoomClientService.js"></script> -->
+  <!-- <script type="text/javascript" src="js/services/rooms/contentRoomClientService.js"></script> -->
+
+  <!-- <script type="text/javascript" src="app/shared/services/rooms/clientRoomClientService.js"></script> -->
+  <!-- <script type="text/javascript" src="app/shared/services/rooms/welcomeRoomClientService.js"></script> -->
+
+  <script type="text/javascript" src="app/shared/services/displaySettingsService.js"></script>
+  <script type="text/javascript" src="app/components/settings/displaySettings/displaySettings.js"></script>
+
+
+
+  <!-- <script type="module" src="app/shared/services/servers/angular/a_serverService.js"></script> -->
+  <!-- <script type="module" src="app/shared/services/servers/angular/a_navigationService.js"></script> -->
+
+
+
+  <script type="module" src="app/app.routes.dictator.js"></script>
+
+</head>
+
+<body ng-app="awApp">
+    <ui-view></ui-view>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+
+      <!-- number picker -->
+      <div class="container" ng-controller="npMainController" ng-init="init($ctrl.min,$ctrl.max,$ctrl.number,$ctrl.numberDidUpdate)">
+        <div class="row">
+          <button class="number_picker_button d-flex" ng-click="inc()" style="background-color: Transparent;">
+            <img class="d-flex flex-fill" src="img/number_picker/ARROW03.png"></img>
+          </button>
+        </div>
+        <div class="number_picker_number row">
+          <img class="d-flex flex-fill" src="img/number_picker/numbers/{{numberModel.number}}.png"></img>
+        </div>
+        <div class="row">
+          <button class="number_picker_button d-flex" ng-click="dec()" style="background-color: Transparent;border: none;">
+            <img class="d-flex flex-fill" src="img/number_picker/ARROW04.png"></img>
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="flex-fill d-flex" style="min-width:200px; min-height:200px;">
+
+  <div class="container-fluid flex-column flex-fill d-flex">
+
+    <div class="row-fluid h-50 flex-fill">  <!-- incredibly ugly -->
+
+      <div class="overlay-container w-100 h-100">
+
+        <!-- content -->
+        <div class="w-100 h-100" ng-style="styleForContent()">
+          <div class="w-100 h-100" ng-switch="!$ctrl.imgSrc">
+            <div class="w-100 h-100" ng-switch-when="true">
+              <div>
+                Double click to browse folder
+              </div>
+            </div>
+            <div class="w-100 h-100" ng-switch-when="false">
+              <img
+                class="w-100 h-100"
+
+                style="object-fit: fill;"
+
+                src="{{$ctrl.imgSrc}}"
+              ></img>
+            </div>
+          </div>
+        </div>
+
+        <!-- content-overlay -->
+        <div class="overlay d-flex" ng-style="styleForContentOverlay()">
+
+          <div class="flex-fill d-flex" style="overflow: hidden;">
+            <folder-data-input-source
+              class="flex-fill d-flex"
+
+              nb-items="$ctrl.nbItems"
+              random-pick="$ctrl.randomPick"
+
+              on-new-input="$ctrl.manageInput_data(arr_data)"
+            ></folder-data-input-source>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <button ng-click="$ctrl.onSubmit({imgSrc: $ctrl.imgSrc})">SUBMIT</button>
+      <button ng-click="$ctrl.onCancel()">CANCEL</button>
+
+    </div>
+
+  </div>
+
+
+</div>

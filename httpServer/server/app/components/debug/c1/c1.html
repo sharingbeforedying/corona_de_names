@@ -1,0 +1,24 @@
+<!-- home.html -->
+<div>
+  <div class="jumbotron text-center">
+    <h1>C1 Page</h1>
+  </div>
+
+  <div class="container">
+    <!-- <button ng-click="$ctrl.connect()">CONNECT</button> -->
+
+    <div>
+      {{$ctrl.state}}
+    </div>
+
+    <div ng-repeat="roomCommandName in $ctrl.roomCommandNames">
+      <button ng-click="$ctrl.do(roomCommandName)">{{roomCommandName}}</button>
+    </div>
+
+    <div ng-repeat="moveToCommandName in $ctrl.moveToCommandNames">
+      <button ng-click="$ctrl.do(moveToCommandName)">{{moveToCommandName}}</button>
+    </div>
+
+  </div>
+
+</div>

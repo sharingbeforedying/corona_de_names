@@ -1,0 +1,46 @@
+<!-- cn_mini.html -->
+<link rel="stylesheet" href="../../css/cn_mini.css">
+
+<div class="h-100 w-100" ng-controller="cnMiniController" ng-init="init()">
+
+    <!-- <div class="container h-100 d-flex flex-column" ng-controller="cnMiniGridController">
+      <div ng-repeat="rowModel in grid_model track by $index" class="d-flex flex-row flex-fill">
+          <div ng-repeat="colModel in rowModel track by $index" class="d-flex flex-fill">
+            <div class="card d-flex flex-fill m-1" ng-controller="cnMiniCellController" ng-init="init(colModel)" ng-style="styleForCell()">
+            </div>
+          </div>
+      </div>
+    </div> -->
+
+    <h4>active team</h4>
+    <div>name:  {{teamPSI().session.name}}</div>
+    <div>color: {{teamPSI().session.color}}</div>
+    <div>score: {{teamPSI().instance.score}}</div>
+
+    <h4>active player</h4>
+    <div>name:  {{playerPSI().group.name}}</div>
+    <div>role:  {{playerPSI().session.role}}</div>
+    <div>score: {{playerPSI().instance.score}}</div>
+
+    <h4>contracts</h4>
+    <button ng-click='submit_contract("lol",1)'>LOL, 1</button>
+    <button ng-click='submit_contract("lol",3)'>LOL, 3</button>
+
+    <h4>game_grid</h4>
+    <div ng-controller="cnMiniGridController" ng-init="init()" ng-style="styleForGrid()" style="display: grid; grid-template-columns: repeat(5,1fr); grid-gap: 4px 4px; justify-content: stretch;">
+      <div ng-repeat="(cellIndex, cellModel) in child_models()" class="d-flex">
+        <div class="flex-fill rounded my_square" ng-controller="cnMiniCellController" ng-init="init(cellIndex, cellModel)" ng-style="styleForCell()" ng-click="cellClicked()">
+
+          <div class="card mx-auto" style="background-color: Transparent;border-style:none;" ng-style="styleForCard()">
+            <img class="card-img h-100 w-100" src="{{imageSrc}}" style="border-style:none; object-fit: cover;"></img>
+            <div class="card-img-overlay d-flex align-items-center" style="padding:0px;">
+              <h2 class="card-title mx-auto" ng-style="styleForWord()">{{word}}</h2>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+</div>

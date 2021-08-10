@@ -1,0 +1,35 @@
+<!-- home.html -->
+<div>
+  <div class="jumbotron text-center">
+    <h1>Chat Page</h1>
+  </div>
+
+  <div class="container">
+    <!-- <button ng-click="$ctrl.connect()">CONNECT</button> -->
+
+    <div>
+      {{$ctrl.state}}
+    </div>
+
+    <div ng-repeat="roomCommandName in $ctrl.roomCommandNames">
+      <button ng-click="$ctrl.do(roomCommandName)">{{roomCommandName}}</button>
+    </div>
+
+    <div ng-repeat="moveToCommandName in $ctrl.moveToCommandNames">
+      <button ng-click="$ctrl.do(moveToCommandName)">{{moveToCommandName}}</button>
+    </div>
+
+    <div ng-repeat="message in $ctrl.messages">
+      <div>date   : {{message.dateString}}</div>
+      <div>sender : {{message.sender}}</div>
+      <div>text   : {{message.text}}</div>
+    </div>
+
+    <div>
+      SEND MESSAGE:
+      <editable-field field-value="''" field-type="text" on-update="$ctrl.sendChatMessage(value)"></editable-field>
+    </div>
+
+  </div>
+
+</div>

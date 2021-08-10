@@ -1,0 +1,102 @@
+<!-- game_teller.html -->
+<link rel="stylesheet" href="../css/overlay.css">
+
+<div class="custom_cursor h-100" ng-controller="gameTellerPController" ng-init="init()" ng-style="styleForMain()">
+
+  <h1 ng-style="styleForTopBanner()">{{bannerMessage}}</h1>
+  <!--, clicks left: {{gameModel.currentTurn.actionSequence.get_remaining_actions_nb()}}-->
+  <!-- <h1 class="text-center" ng-controller="cnmGameOverController" ng-init="init()">{{message}}</h1> -->
+
+  <div ng-controller="displaySettingsController" ng-init="init()">
+    <h4>display Settings</h4>
+    <input type="number" name="cellSizeInput" ng-model="size_cell" ng-change="updateWith_cellSize(size_cell)">
+    <input type="number" name="fontSizeInput" ng-model="size_font" ng-change="updateWith_fontSize(size_font)">
+  </div>
+
+  <h4>active player</h4>
+  <div>name:  {{playerPSI().group.name}}</div>
+  <div>role:  {{playerPSI().session.role}}</div>
+  <div>score: {{playerPSI().instance.score}}</div>
+
+  <div class="row w-100 h-100">
+
+    <div class="col-10 h-100">
+
+      <div ng-controller="gameTellerGridController" ng-init="init()" ng-style="styleForGrid()" style="display: grid; grid-template-columns: repeat(5,1fr); grid-gap: 4px 4px; justify-content: stretch;">
+        <div ng-repeat="cellModel in cellModels" class="d-flex">
+              <div class="flex-fill rounded overlay-container" ng-controller="gameTellerCellController" ng-init="init(cellModel)" ng-style="styleForCell()" ng-click="cellClicked()">
+
+                <!-- content -->
+                <div class="flex-fill" ng-controller="cellContentController" ng-init="init(cellModel.content.items)" ng-style="styleForContent()">
+                  <div class="card mx-auto" style="background-color: Transparent;border-style:none;" ng-style="styleForCard()">
+                    <!-- image -->
+                    <img class="card-img h-100 w-100" src="{{image}}" style="border-style:none; object-fit: cover;"></img>
+                    <!-- word -->
+                    <div class="card-img-overlay d-flex align-items-center" style="padding:0px;">
+                      <h2 class="card-title mx-auto" ng-style="styleForWord()">{{word}}</h2>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- content-overlay -->
+                <div class="overlay" ng-style="styleForContentOverlay()">
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+    </div>
+
+
+    <div class="col-2">
+
+      <!--hint creator-->
+      <div class="row" ng-controller="gameTellerHintController" ng-style="style()">
+
+          <!--number-->
+          <div class="container" ng-controller="gameTellerHintPickNumberController">
+              <div class="row">
+
+                <!-- number picker -->
+                <div class="container" ng-controller="npMainController" ng-init="init(min,max,number,numberDidUpdate)">
+                  <div class="row">
+                    <button class="number_picker_button d-flex" ng-click="inc()" style="background-color: Transparent;">
+                      <img class="d-flex flex-fill" src="assets/images/number_picker/ARROW03.png"></img>
+                    </button>
+                  </div>
+                  <div class="number_picker_number row">
+                    <img class="d-flex flex-fill" src="assets/images/number_picker/numbers/{{numberModel.number}}.png"></img>
+                  </div>
+                  <div class="row">
+                    <button class="number_picker_button d-flex" ng-click="dec()" style="background-color: Transparent;border: none;">
+                      <img class="d-flex flex-fill" src="assets/images/number_picker/ARROW04.png"></img>
+                    </button>
+                  </div>
+                </div>
+
+
+              </div>
+          </div>
+
+          <!--word-->
+          <h4>WORD</h4>
+          <input scope-element="hintWordInput" class="mx-auto" type="text" ng-model="word" ng-change="wordDidUpdate(word)">
+
+          <!--submit-->
+          <div class="row">
+            <button class="submit_hint_button d-flex" ng-click="submitHint()" style="background-color: Transparent;border: none;">
+              <img class="d-flex flex-fill" src="assets/images/buttons/ok.png"></img>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>

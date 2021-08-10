@@ -1,0 +1,35 @@
+<!-- <div>OL</div> -->
+
+<div>
+  <h1>INSTANCE GUESSER</h1>
+  <h3>{{$ctrl.roomName}}</h3>
+
+  <guesser-grid-cnduo
+    grid-game="$ctrl.grid_game"
+    grid-content="$ctrl.grid_content"
+    on-cell-selection="$ctrl.submitSelection(cellModel)"
+  ></guesser-grid-cnduo>
+
+  <!-- <div>
+    <h4>STATE</h4>
+    {{$ctrl.state}}
+  </div> -->
+
+  <div ng-repeat="roomCommandName in $ctrl.roomCommandNames">
+    <button ng-click="$ctrl.do(roomCommandName)">{{roomCommandName}}</button>
+  </div>
+
+  <div>
+    <h4>DEBUG</h4>
+    <button ng-click="$ctrl.debug_submitSelection()">SUBMIT SELECTION</button>
+    <button ng-click="$ctrl.debug_submitEndTurn()">SUBMIT END TURN</button>
+
+  </div>
+
+  <div>
+    <h4>NAV</h4>
+    <button ng-click="$ctrl.goToTellerRoom()">GO TO TELLER ROOM</button>
+
+  </div>
+
+</div>
